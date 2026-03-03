@@ -1,5 +1,21 @@
 #include "tty.h"
 
+// We need outb/inb for serial output
+static inline void serial_outb(unsigned short port, unsigned char val) {
+    __asm__ volatile("outb %0, %1" : : "a"(val), "Nd"(port));
+}
+
+static inline unsigned char serial_inb(unsigned short port) {
+    unsigned char ret;
+    __asm__ volatile("inb %1, %0" : "=a"(ret) : "Nd"(port));
+    return ret;
+}
+
+static void write_serial(char a) {
+    while ((serial_inb(0x3F8 + 5) & 0x20) == 0);
+    serial_outb(0x3F8, a);
+}
+
 #define VGA_ADDRESS 0xB8000
 #define VGA_WIDTH 80
 #define VGA_HEIGHT 25
@@ -32,6 +48,7 @@ void print_string(const char *str) {
                 current_vga_row++;
             }
         }
+        write_serial(str[i]);
         i++;
     }
 }

@@ -8,7 +8,7 @@
 - [x] Implement actual multiboot memory map parsing in C.
 - [x] Implement physical and virtual memory management optimized for large tensor allocations.
 - [ ] Implement multi-core processing support (SMP) for parallel scheduling.
-- [ ] Build a robust PCI/PCIe driver for discovering GPUs/NPUs.
+- [x] Build a robust PCI/PCIe driver for discovering GPUs/NPUs.
 - [ ] Integrate a minimalistic math/tensor library in kernel-space.
 - [ ] Implement the AI task scheduler with compute-intensity awareness.
 - [ ] Create a basic user space for executing AI workloads.

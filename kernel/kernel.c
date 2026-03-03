@@ -1,6 +1,7 @@
 #include "multiboot.h"
 #include "tty.h"
 #include "memory.h"
+#include "../src/ai/gpu_manager.h"
 
 void kernel_main(unsigned long magic, unsigned long addr) {
     clear_screen();
@@ -37,5 +38,5 @@ void kernel_main(unsigned long magic, unsigned long addr) {
 
     // In a real OS, we'd initialize the AI scheduler and hardware here.
     // ai_scheduler_init();
-    // gpu_manager_init();
+    gpu_manager_init();
 }
