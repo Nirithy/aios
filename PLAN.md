@@ -7,8 +7,8 @@
 - [x] Create initial architectural stubs for AI-specific OS components (`ai_scheduler`, `gpu_manager`).
 - [x] Implement actual multiboot memory map parsing in C.
 - [x] Implement physical and virtual memory management optimized for large tensor allocations.
-- [ ] Implement multi-core processing support (SMP) for parallel scheduling.
+- [x] Implement multi-core processing support (SMP) for parallel scheduling.
 - [x] Build a robust PCI/PCIe driver for discovering GPUs/NPUs.
 - [x] Integrate a minimalistic math/tensor library in kernel-space.
 - [x] Implement the AI task scheduler with compute-intensity awareness.
-- [ ] Create a basic user space for executing AI workloads.
+- [x] Create a basic user space for executing AI workloads.

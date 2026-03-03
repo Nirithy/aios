@@ -7,6 +7,7 @@ typedef struct {
     int is_active;
     void *model_ptr;
     void *input_data_ptr;
+    int assigned_core; // Core ID assigned to execute this task
 } ai_task_t;
 
 // Initialize the AI scheduler
