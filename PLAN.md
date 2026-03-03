@@ -9,6 +9,6 @@
 - [x] Implement physical and virtual memory management optimized for large tensor allocations.
 - [ ] Implement multi-core processing support (SMP) for parallel scheduling.
 - [x] Build a robust PCI/PCIe driver for discovering GPUs/NPUs.
-- [ ] Integrate a minimalistic math/tensor library in kernel-space.
-- [ ] Implement the AI task scheduler with compute-intensity awareness.
+- [x] Integrate a minimalistic math/tensor library in kernel-space.
+- [x] Implement the AI task scheduler with compute-intensity awareness.
 - [ ] Create a basic user space for executing AI workloads.

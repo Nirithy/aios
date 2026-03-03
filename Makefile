@@ -30,7 +30,10 @@ kernel/ai_scheduler.o: src/ai/ai_scheduler.c
 kernel/gpu_manager.o: src/ai/gpu_manager.c
 	$(CC) $(CFLAGS) $< -o $@
 
-OBJS = boot/boot.o kernel/tty.o kernel/memory.o kernel/kernel.o kernel/pci.o kernel/ai_scheduler.o kernel/gpu_manager.o
+kernel/tensor.o: src/ai/tensor.c
+	$(CC) $(CFLAGS) $< -o $@
+
+OBJS = boot/boot.o kernel/tty.o kernel/memory.o kernel/kernel.o kernel/pci.o kernel/ai_scheduler.o kernel/gpu_manager.o kernel/tensor.o
 
 ai_os.bin: $(OBJS)
 	$(LD) $(LDFLAGS) $(OBJS) -o $@
