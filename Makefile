@@ -12,6 +12,12 @@ all: ai_os.bin
 boot/boot.o: boot/boot.s
 	$(AS) $(ASFLAGS) $< -o $@
 
+kernel/tty.o: kernel/tty.c
+	$(CC) $(CFLAGS) $< -o $@
+
+kernel/memory.o: kernel/memory.c
+	$(CC) $(CFLAGS) $< -o $@
+
 kernel/kernel.o: kernel/kernel.c
 	$(CC) $(CFLAGS) $< -o $@
 
@@ -21,7 +27,7 @@ kernel/ai_scheduler.o: src/ai/ai_scheduler.c
 kernel/gpu_manager.o: src/ai/gpu_manager.c
 	$(CC) $(CFLAGS) $< -o $@
 
-OBJS = boot/boot.o kernel/kernel.o kernel/ai_scheduler.o kernel/gpu_manager.o
+OBJS = boot/boot.o kernel/tty.o kernel/memory.o kernel/kernel.o kernel/ai_scheduler.o kernel/gpu_manager.o
 
 ai_os.bin: $(OBJS)
 	$(LD) $(LDFLAGS) $(OBJS) -o $@

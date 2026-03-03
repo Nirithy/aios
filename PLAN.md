@@ -6,7 +6,7 @@
 - [x] Implement a minimal C kernel that outputs text to VGA.
 - [x] Create initial architectural stubs for AI-specific OS components (`ai_scheduler`, `gpu_manager`).
 - [x] Implement actual multiboot memory map parsing in C.
-- [ ] Implement physical and virtual memory management optimized for large tensor allocations.
+- [x] Implement physical and virtual memory management optimized for large tensor allocations.
 - [ ] Implement multi-core processing support (SMP) for parallel scheduling.
 - [ ] Build a robust PCI/PCIe driver for discovering GPUs/NPUs.
 - [ ] Integrate a minimalistic math/tensor library in kernel-space.
