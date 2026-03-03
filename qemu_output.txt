@@ -1,0 +1,24 @@
+Hello AI OS - Booting the Future of Computing
+Memory map detected.
+Initializing PMM...
+Added RAM Region: Base 0x00100000 Size 0x07EE0000
+Allocating a 16MB tensor...
+Successfully allocated 16MB tensor at: 0x00100000
+Initializing GPU/NPU Resource Manager...
+Initializing PCI Subsystem...
+PCI Device: Bus 0x00000000 Slot 0x00000000 Func 0x00000000
+  Vendor: 0x00008086 Device: 0x00001237 Class: 0x00000006 Subclass: 0x00000000
+PCI Device: Bus 0x00000000 Slot 0x00000001 Func 0x00000000
+  Vendor: 0x00008086 Device: 0x00007000 Class: 0x00000006 Subclass: 0x00000001
+PCI Device: Bus 0x00000000 Slot 0x00000001 Func 0x00000001
+  Vendor: 0x00008086 Device: 0x00007010 Class: 0x00000001 Subclass: 0x00000001
+PCI Device: Bus 0x00000000 Slot 0x00000001 Func 0x00000003
+  Vendor: 0x00008086 Device: 0x00007113 Class: 0x00000006 Subclass: 0x00000080
+PCI Device: Bus 0x00000000 Slot 0x00000002 Func 0x00000000
+  Vendor: 0x00001234 Device: 0x00001111 Class: 0x00000003 Subclass: 0x00000000
+  -> Found Display/GPU Controller!
+PCI Device: Bus 0x00000000 Slot 0x00000003 Func 0x00000000
+  Vendor: 0x00008086 Device: 0x0000100E Class: 0x00000002 Subclass: 0x00000000
+PCI Scan Complete.
+Setting up tensor memory pools...
+DONE
