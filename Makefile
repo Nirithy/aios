@@ -24,6 +24,15 @@ kernel/kernel.o: kernel/kernel.c
 kernel/pci.o: kernel/pci.c
 	$(CC) $(CFLAGS) $< -o $@
 
+kernel/smp.o: kernel/smp.c
+	$(CC) $(CFLAGS) $< -o $@
+
+kernel/syscall.o: kernel/syscall.c
+	$(CC) $(CFLAGS) $< -o $@
+
+src/user/user_app.o: src/user/user_app.c
+	$(CC) $(CFLAGS) $< -o $@
+
 kernel/ai_scheduler.o: src/ai/ai_scheduler.c
 	$(CC) $(CFLAGS) $< -o $@
 
@@ -33,7 +42,7 @@ kernel/gpu_manager.o: src/ai/gpu_manager.c
 kernel/tensor.o: src/ai/tensor.c
 	$(CC) $(CFLAGS) $< -o $@
 
-OBJS = boot/boot.o kernel/tty.o kernel/memory.o kernel/kernel.o kernel/pci.o kernel/ai_scheduler.o kernel/gpu_manager.o kernel/tensor.o
+OBJS = boot/boot.o kernel/tty.o kernel/memory.o kernel/kernel.o kernel/pci.o kernel/smp.o kernel/syscall.o kernel/ai_scheduler.o kernel/gpu_manager.o kernel/tensor.o src/user/user_app.o
 
 ai_os.bin: $(OBJS)
 	$(LD) $(LDFLAGS) $(OBJS) -o $@

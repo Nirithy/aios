@@ -4,6 +4,9 @@
 #include "../src/ai/gpu_manager.h"
 #include "../src/ai/ai_scheduler.h"
 #include "../src/ai/tensor.h"
+#include "smp.h"
+#include "syscall.h"
+#include "../src/user/user_app.h"
 
 void kernel_main(unsigned long magic, unsigned long addr) {
     clear_screen();
@@ -63,8 +66,12 @@ void kernel_main(unsigned long magic, unsigned long addr) {
     }
 
     // Initialize the AI scheduler and hardware here.
+    smp_init();
     ai_scheduler_init();
     gpu_manager_init();
+
+    // Initialize system calls
+    syscall_init();
 
     // Schedule test inference tasks
     print_string("Scheduling Inference Tasks...\n");
@@ -72,12 +79,15 @@ void kernel_main(unsigned long magic, unsigned long addr) {
     schedule_inference_task((void*)0x3000, (void*)0x4000, 95);  // High intensity
     schedule_inference_task((void*)0x5000, (void*)0x6000, 10);  // Low intensity
 
-    print_string("Tick 1: ");
+    print_string("Tick 1:\n");
     ai_scheduler_tick();
 
-    print_string("Tick 2: ");
+    // Simulate transition to user space
+    execute_user_app();
+
+    print_string("Tick 2:\n");
     ai_scheduler_tick();
 
-    print_string("Tick 3: ");
+    print_string("Tick 3:\n");
     ai_scheduler_tick();
 }
